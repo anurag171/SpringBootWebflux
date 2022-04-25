@@ -1,0 +1,45 @@
+
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - local
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - staging
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: staging
+---
+spring:
+  config:
+    activate:
+      on-profile:
+        - prod
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: prod
+
+---
+server:
+  port: 8092
+logging:
+  level:
+    root: info
+spring:
+  application:
+    name: movie-review-service
